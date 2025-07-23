@@ -46,53 +46,54 @@
     </div>
   </div>
 
-  <script>
-    const yesButton = document.getElementById('yesButton');
-    const noButton = document.getElementById('noButton');
-    const imageDisplay = document.getElementById('imageDisplay');
-    const valentineQuestion = document.getElementById('valentineQuestion');
-    const responseButtons = document.getElementById('responseButtons');
+<script>
+  const yesButton = document.getElementById('yesButton');
+  const noButton = document.getElementById('noButton');
+  const imageDisplay = document.getElementById('imageDisplay');
+  const valentineQuestion = document.getElementById('valentineQuestion');
+  const responseButtons = document.getElementById('responseButtons');
 
-    let noClickCount = 0;
-    let buttonHeight = 48;
-    let buttonWidth = 80;
-    let fontSize = 20;
+  let noClickCount = 0;
+  let buttonHeight = 48;
+  let buttonWidth = 80;
+  let fontSize = 20;
 
-    const imagePaths = [
-      "https://cdn2.thecatapi.com/images/MTkzNjE1OQ.jpg", // initial
-      "https://cdn2.thecatapi.com/images/MTkzNjI1MA.jpg", // cross-eyed
-      "https://cdn2.thecatapi.com/images/MTg4NTYyMw.jpg", // derpy face
-      "https://cdn2.thecatapi.com/images/2oo.jpg",        // open mouth
-      "https://cdn2.thecatapi.com/images/MTkzNjA1Nw.jpg", // tongue out
-      "https://cdn2.thecatapi.com/images/MTg2OTgxNg.jpg", // blep
-      "https://cdn2.thecatapi.com/images/MTkzNjExMQ.jpg"  // final silly look
-    ];
+  const imagePaths = [
+    "https://cdn2.thecatapi.com/images/MTkzNjE1OQ.jpg", // initial
+    "https://cdn2.thecatapi.com/images/MTkzNjI1MA.jpg", // cross-eyed
+    "https://cdn2.thecatapi.com/images/MTg4NTYyMw.jpg", // derpy face
+    "https://cdn2.thecatapi.com/images/2oo.jpg",        // open mouth
+    "https://cdn2.thecatapi.com/images/MTkzNjA1Nw.jpg", // tongue out
+    "https://cdn2.thecatapi.com/images/MTg2OTgxNg.jpg", // blep
+    "https://cdn2.thecatapi.com/images/MTkzNjExMQ.jpg"  // final silly look
+  ];
 
-    const noTexts = ["No", "you sure?", "Sure najud??", "E recheck daw", "dili pwede mangatik", "😛"];
+  const noTexts = ["No", "you sure?", "Sure najud??", "E recheck daw", "dili pwede mangatik", "😛"];
 
-    noButton.addEventListener('click', function () {
-      if (noClickCount < imagePaths.length - 1) {
-        noClickCount++;
-        imageDisplay.src = imagePaths[noClickCount];
-        buttonHeight += 35;
-        buttonWidth += 35;
-        fontSize += 25;
-        yesButton.style.height = ${buttonHeight}px;
-        yesButton.style.width = ${buttonWidth}px;
-        yesButton.style.fontSize = ${fontSize}px;
+  noButton.addEventListener('click', function () {
+    if (noClickCount < imagePaths.length - 1) {
+      noClickCount++;
+      imageDisplay.src = imagePaths[noClickCount];
+      buttonHeight += 35;
+      buttonWidth += 35;
+      fontSize += 25;
+      yesButton.style.height = `${buttonHeight}px`;
+      yesButton.style.width = `${buttonWidth}px`;
+      yesButton.style.fontSize = `${fontSize}px`;
 
-        if (noClickCount < noTexts.length) {
-          noButton.textContent = noTexts[noClickCount];
-        }
+      if (noClickCount < noTexts.length) {
+        noButton.textContent = noTexts[noClickCount];
       }
-    });
+    }
+  });
 
-    yesButton.addEventListener('click', () => {
-      imageDisplay.src = "https://cdn2.thecatapi.com/images/2oo.jpg";
-      valentineQuestion.textContent = "Yieeeeeee 😃";
-      responseButtons.style.display = 'none';
-      confetti(); // Trigger confetti
-    });
-  </script>
+  yesButton.addEventListener('click', () => {
+    imageDisplay.src = "https://cdn2.thecatapi.com/images/2oo.jpg";
+    valentineQuestion.textContent = "Yieeeeeee 😃";
+    responseButtons.style.display = 'none';
+    confetti(); // Trigger confetti
+  });
+</script>
+
 </body>
 </html>
